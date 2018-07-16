@@ -1,0 +1,27 @@
+zuml 含义ZK User Interface Markup Language ZK用户接口标记语言
+
+<?page title="Super Application"?>
+<window title="Super Hello" border="normal">
+<button label="hi" onClick='alert("hi")'/>
+第一行表示页面，标题
+第二行指定根控件，边框
+第三行指定按钮和点击事件
+
+ZK Loader 指定文档的语言
+1.通过文件扩展名辨识语言
+2.如果文档标签没有namespace属性，则根据一些特殊的标签推断
+3.如果文档的标签有namespace属性，先看namespace是否能标识语言，不能的话再通过标签推断
+
+xul/html的后缀名一般用 zul、 xul
+xhtml的后缀名一般用 zhtml,html, html, and xhtml
+这个特性可以被用在web.xml的servlet-mapping中，指定servlet的处理文件
+<servlet-mapping>
+ <servlet-name>zkLoader</servlet-name>
+ <url-pattern>*.xul</url-pattern>
+</servlet-mapping>
+
+namespace标记当前文档的语言，则文档可以使用一些特殊的后缀名
+而且文档还可以融合多个语言
+以下是一个例子<window xmlns="http://www.zkoss.org/2005/zul">
+
+
